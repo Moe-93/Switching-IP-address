@@ -10,10 +10,10 @@ socks.setdefaultproxy(proxy_type=socks.PROXY_TYPE_SOCKS5, addr="127.0.0.1", port
 
 socket.socket = socks.socksocket
 
-i=0
-while (i <= 5):
+i=5
+while (i > 1):
     try:
-        os.system("service tor restart")
+        os.system("sudo service tor restart")
         time.sleep(10)
         ip = requests.get("http://icanhazip.com").text
 
